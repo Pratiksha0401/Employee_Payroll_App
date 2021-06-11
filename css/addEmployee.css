@@ -140,11 +140,23 @@ select{
 .cancelButton{
     text-decoration: none;
     text-align: center;
-    
+}
+.cancelButton:hover{
+    background:grey;
+    color: white;
 }
 
 .submitButton{
     margin-right: 30px;
+}
+
+.resetButton{
+    text-decoration: none;
+    text-align: center;
+}
+.resetButton:hover{
+    background:grey;
+    color: white;
 }
 
 @media only screen and (max-width:600px) {
@@ -170,13 +182,63 @@ select{
     }
 }
 
-@media only screen and (max-width:960px){
+@media  only screen and (max-width:600px) {
+    .form{
+        margin-top: 10px;
+    }
+    .submit-reset{
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-direction:  row-reverse;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .submitButton{
+        margin: 0;
+    }
+    .button-parent{
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width:960px) {
     .cancelButton{
         margin-left: 0px;
     }
     .form{
-        width: 140px;
-        padding: 140% 85;
+        width: 85%;
+        padding: 44px 20px;
+    }    
+    .profile-label{
+        margin-right: 0px;
     }
-    
+}
+
+a.button:hover{
+    background:grey;
+    color: white;
+}
+
+.submitButton:hover{
+    background-color: #82a70c;
+    color: white;
+}
+
+.resetButton:hover{
+    background:grey;
+    color: white;
+}
+
+.department{
+    margin-left: 30px;
+}
+
+
+error-output{
+    margin-left: 15px;
+    font-size: 15px;
+    font-style: italic;
+    color: red;
 }
