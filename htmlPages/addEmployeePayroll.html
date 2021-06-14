@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/addEmployee.css">
     <script type="text/javascript" src="../js/EmployeePayroll.js"></script>
     <script type="text/javascript" src="../js/FormValidation.js"></script>
+    <script type="text/javascript" src="../js/utility.js"></script>
+    <script type="text/javascript" src="../js/site_properties.js"></script>
     <title>Employee Payroll Form</title>
 </head>
 <body>  
@@ -22,7 +24,7 @@
     </header>
 
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save();return false;" onreset="resertForm();">
+        <form class="form" action="#" onsubmit="save(event)" onreset="resertForm();">
             <div class="form-head">
                 <header>Employee Payroll Form</header>
             </div>
@@ -136,7 +138,7 @@
                         <option value="March">March</option>
                         <option value="April">April</option>
                         <option value="May">May</option>
-                        <option value="June">June</option>
+                        <option value="Jun">June</option>
                         <option value="July">July</option>
                         <option value="Aug">Aug</option>
                         <option value="Sept">Sept</option>
@@ -146,8 +148,8 @@
                     </select>
                     <select id="year" name="Year">
                         <option>Year</option>
-                        <option value="2020">2022</option>
-                        <option value="2020">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
                         <option value="2018">2018</option>

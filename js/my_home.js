@@ -24,7 +24,7 @@ const createInnerHtml = () => {
         
     </td >
     <td>${empPayrollData._salary}</td>
-    <td>${stringifyDate(empPayrollData._startDate)}</td>
+    <td>${strigifyDate(empPayrollData._startDate)}</td>
     <td>
         <img id="${empPayrollData._id}" src="../assets/icons/delete-black-18dp.svg" alt="Delete" onclick="remove(this)">
         <img id="${empPayrollData._id}" src="../assets/icons/create-black-18dp.svg" alt="Edit" onclick="update(this)">
@@ -41,44 +41,13 @@ const getDepatmentHtml = (data) => {
     return deptHtml;
 }
 
-const createEmployeePayrollJSON = () => {
-    const empPayrolllistLocal = [
-        {
-            _id : new Date().getTime,
-            _name : "Narayan Mahadevan",
-            _gender : 'Male',
-            _department : [
-                 'Engineer',
-                 'Finance'
-            ],
-            _salary : 500000,
-            _startDate : '29 Oct 2019',
-            _note : '',
-            _profilePic : '../assets/profile-images/Ellipse -2.png'
-        },
-        {
-            _id : new Date().getTime,
-            _name : "Amar Pawar",
-            _gender : 'Male',
-            _department : [
-                 'Sales',
-                 'Finance'
-            ],
-            _salary : 300000,
-            _startDate : '19 Oct 2019',
-            _note : '',
-            _profilePic : "../assets/profile-images/Ellipse -7.png"
-        }    
-    ]
-    return empPayrolllistLocal;
-}
-
 const getDataFromLocalStorage= () => {
     return localStorage.getItem('EmployeePayrollList')? 
            JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
 }
 const remove = (data) =>{
-    let employeeData = employeePayrollList.find(empData => empData._id == data._id);
+    console.log(data.id);
+    let employeeData = employeePayrollList.find(empData => empData._id == data.id);
     if(!employeeData){
         return;
     } 
@@ -90,7 +59,7 @@ const remove = (data) =>{
 }
 
 const update = (data) => {
-    let employeeData = employeePayrollList.find(empData => empData._id == data._id);
+    let employeeData = employeePayrollList.find(empData => empData._id == data.id);
     if(!employeeData){
         return;
     
